@@ -1,0 +1,1 @@
+./flame -f domainListTestSmall.tsv 8.8.8.8
