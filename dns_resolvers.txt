@@ -18,3 +18,4 @@
 91.239.100.100 UncensoredDNS
 156.154.70.1 Neustar
 99.192.182.100 Tenta
+2001:291:112::2 Google
