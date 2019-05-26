@@ -18,18 +18,18 @@ while read line; do
 done < "../dns_resolvers.txt"
 
 ## Here you can select how many of the selected resolvers you want to be using
-for i in `seq 1 2`;
+for k in `seq 1 2`;
 do 
-    resolver=$(sed "${i}q;d" ../dns_resolversIP.txt)
+    resolver=$(sed "${k}q;d" ../dns_resolversIP.txt)
     for FILE in Results/*.txt
     do  
         echo Resolver: $resolver >> ${FILE}
     done
     ##This is the acutal line that returns how many ms it takes to find a query (only works if it has dnssec flag which is "ad")
-    for i in `seq 1 5`;
+    for j in `seq 1 5`;
     do
         ## this puts all the searched domains from the inputted domain list
-        tld=$(sed "${i}q;d" ../tld.txt)
+        tld=$(sed "${j}q;d" ../tld.txt)
         while read line; do 
             dig @$resolver $line + dnssec +multi  | pcregrep -M "flags:(.*)ad(.|\n)*Query time:.*" | grep time | grep -Eo '[0-9]{1,}' >> Results/resultdot$tld.txt
         done < "TLDSep/dot$tld.txt"
