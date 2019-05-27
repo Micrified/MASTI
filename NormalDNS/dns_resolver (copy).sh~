@@ -26,17 +26,13 @@ function perform_test()
     local result_line='';
     declare -a measurements=();
 
-    echo "DNS resolver,Average(ms),Min(ms),Max(ms)";
+    echo "DNS resolver,Average(s),Min(s),Max(s)";
     for ip in "${!RESOLVERS[@]}"; do
 
 	result_line="$(
 	    dnsperf -d "$queries_path" -s "$ip" | grep -i 'average latency';
 	)";
 	readarray -t measurements < <(echo "$result_line" | grep -Po '[\.\d]+';);
-	
-	measurements[0]="$(echo "${measurements[0]} * 1000" | bc)";
-	measurements[1]="$(echo "${measurements[1]} * 1000" | bc)";
-	measurements[2]="$(echo "${measurements[2]} * 1000" | bc)";
 
 	echo "${RESOLVERS[$ip]},${measurements[0]},${measurements[1]},${measurements[2]}";
     done
