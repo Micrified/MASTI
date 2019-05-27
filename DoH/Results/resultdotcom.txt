@@ -1,17 +1,12 @@
 Resolver: Google https://dns.google.com/experimental
+Time taken 63.55 milliseconds 
+Time taken 28.30 milliseconds 
+Time taken 68.70 milliseconds 
+Time taken 62.45 milliseconds 
+Time taken 59.43 milliseconds 
 Resolver: Cloudflare https://cloudflare-dns.com/dns-query
-Resolver: Quad9 https://dns.quad9.net/dns-query
-Resolver: CleanBrowsing https://doh.cleanbrowsing.org/doh/family-filter/
-Resolver: PowerDNS https://doh.powerdns.org Based on dnsdist-doh branch
-Resolver: blahdns.com_Japan https://doh-jp.blahdns.com/dns-query
-Resolver: blahdns.com_Germany: https://doh-de.blahdns.com/dns-query
-Resolver: NekomimiRouter.com https://dns.dns-over-https.com/dns-query
-Resolver: SecureDNS.eu https://doh.securedns.eu/dns-query
-Resolver: Rubyfish.cn https://dns.rubyfish.cn/dns-query
-Resolver: Commons Host https://commons.host
-Resolver: DnsWarden https://doh.dnswarden.com/adblock
-Resolver: aaflalo.me_US https://dns-gcp.aaflalo.me/dns-query
-Resolver: aaflalo.me_EU: https://dns.aaflalo.me/dns-query
-Resolver: FoundationfAP https://doh.appliedprivacy.net/query
-Resolver: captnemo.in https://doh.captnemo.in/dns-query
-Resolver: Google https://dns.google.com/experimental
+Time taken 66.01 milliseconds 
+Time taken 61.73 milliseconds 
+Time taken 61.44 milliseconds 
+Time taken 66.43 milliseconds 
+Time taken 65.83 milliseconds 
