@@ -26,7 +26,7 @@ function perform_test()
     local result_line='';
     declare -a measurements=();
 
-    echo "DNS resolver,Average(ms),Min(ms),Max(ms)";
+    echo "DNS resolver,Average(s),Min(s),Max(s)";
     for ip in "${!RESOLVERS[@]}"; do
 
 	result_line="$(
