@@ -26,7 +26,7 @@ function perform_test()
     local result_line='';
     declare -a measurements=();
 
-    echo "DNS resolver,Average(ms),Min(ms),Max(ms)";
+    echo "DNS resolver,Min(ms,)Average(ms),Max(ms)";
     for ip in "${!RESOLVERS[@]}"; do
 
 	result_line="$(
@@ -38,7 +38,7 @@ function perform_test()
 	measurements[1]="$(echo "${measurements[1]} * 1000" | bc)";
 	measurements[2]="$(echo "${measurements[2]} * 1000" | bc)";
 
-	echo "${RESOLVERS[$ip]},${measurements[0]},${measurements[1]},${measurements[2]}";
+	echo "${RESOLVERS[$ip]},${measurements[1]},${measurements[0]},${measurements[2]}";
     done
 }
 
