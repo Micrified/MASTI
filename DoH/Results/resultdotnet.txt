@@ -1,17 +1,4 @@
 Resolver: Google https://dns.google.com/experimental
+Time taken 59.31 milliseconds 
 Resolver: Cloudflare https://cloudflare-dns.com/dns-query
-Resolver: Quad9 https://dns.quad9.net/dns-query
-Resolver: CleanBrowsing https://doh.cleanbrowsing.org/doh/family-filter/
-Resolver: PowerDNS https://doh.powerdns.org Based on dnsdist-doh branch
-Resolver: blahdns.com_Japan https://doh-jp.blahdns.com/dns-query
-Resolver: blahdns.com_Germany: https://doh-de.blahdns.com/dns-query
-Resolver: NekomimiRouter.com https://dns.dns-over-https.com/dns-query
-Resolver: SecureDNS.eu https://doh.securedns.eu/dns-query
-Resolver: Rubyfish.cn https://dns.rubyfish.cn/dns-query
-Resolver: Commons Host https://commons.host
-Resolver: DnsWarden https://doh.dnswarden.com/adblock
-Resolver: aaflalo.me_US https://dns-gcp.aaflalo.me/dns-query
-Resolver: aaflalo.me_EU: https://dns.aaflalo.me/dns-query
-Resolver: FoundationfAP https://doh.appliedprivacy.net/query
-Resolver: captnemo.in https://doh.captnemo.in/dns-query
-Resolver: Google https://dns.google.com/experimental
+Time taken 59.32 milliseconds 

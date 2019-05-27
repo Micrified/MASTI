@@ -1,2 +1,2 @@
-mesadtvm.com.br.	MX
-agatha.folhasp.com.br.	A
+mesadtvm.com.br
+agatha.folhasp.com.br
