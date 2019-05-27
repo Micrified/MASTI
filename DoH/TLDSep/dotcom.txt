@@ -1,7 +1,7 @@
-thumbs2.ebaystatic.com.	AAAA
-mountaineerpublishing.com.	MX
-sip.hotmail.com.	A
-www.cangrejas.com.	A
-google.com.	A
-mesadtvm.com.br.	MX
-agatha.folhasp.com.br.	A
+sip.hotmail.com
+www.cangrejas.com
+google.com
+thumbs2.ebaystatic.com
+mountaineerpublishing.com
+mesadtvm.com.br
+agatha.folhasp.com.br

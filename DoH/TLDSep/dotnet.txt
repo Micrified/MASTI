@@ -1,3 +1,3 @@
-s-static.ak.fbcdn.net.	A
-s-static.ak.fbcdn.net.	A
-annettevandenbosch.nl.	MX
+s-static.ak.fbcdn.net
+s-static.ak.fbcdn.net
+annettevandenbosch.nl
