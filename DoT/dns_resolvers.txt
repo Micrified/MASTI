@@ -1,0 +1,7 @@
+1.1.1.1	Cloudflare
+9.9.9.9 Quad9_secure
+9.9.9.10 Quad9_insecure
+8.8.8.8 Google
+185.228.168.9 cleanbrowsing_secure
+185.228.168.10 cleanbrowsing_adults
+185.228.168.168 cleanbrowsing_family
