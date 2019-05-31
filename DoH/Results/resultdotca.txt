@@ -1,10 +1,11 @@
 Resolver: Google https://dns.google.com/experimental
-Time taken 84.90 milliseconds 
-Time taken 72.77 milliseconds 
+75.70
+56.80
 
 
 Resolver: Cloudflare https://cloudflare-dns.com/dns-query
-Time taken 74.60 milliseconds 
-Time taken 65.00 milliseconds 
+82.09
+63.85
 
 
+Resolver:

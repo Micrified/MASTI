@@ -853,7 +853,7 @@ int main(int argc, char **argv)
   if(successful) {
     int i;
     //printf("%s from %s\n", host, resolvers[resolver_no]);
-    printf("Time taken %.2f milliseconds \n", msec/100);
+    printf("%.2f\n", msec/100);
     // printf("TTL: %u seconds\n", d.ttl);
     // for(i=0; i < d.numv4; i++) {
     //   printf("A: %d.%d.%d.%d\n",
