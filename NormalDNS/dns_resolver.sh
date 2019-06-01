@@ -23,22 +23,42 @@ function perform_test()
     local queries_path="$(readlink -e "$1")";
 
     local ip='';
+    local tld='';
     local result_line='';
+    local results_dir="$(dirname $(readlink -e "$0"))/Results";
+    local tlds_sep_dir="$(dirname $(readlink -e "$0"))/TLDsep";
     declare -a measurements=();
+    declare -a tlds=();
 
-    echo "DNS resolver,Min(ms,)Average(ms),Max(ms)";
-    for ip in "${!RESOLVERS[@]}"; do
+    mkdir -pv "$tlds_sep_dir";
+    mkdir -pv "$results_dir";
+    
+    readarray -t tlds < <(
+	grep -Po '(\w+)\.?\s' domainListTestSmall.tsv \
+	    | grep -Po '^[a-zA-z\d]+' \
+	    | sort -u;
+    );
 
-	result_line="$(
-	    dnsperf -d "$queries_path" -s "$ip" | grep -i 'average latency';
-	)";
-	readarray -t measurements < <(echo "$result_line" | grep -Po '[\.\d]+';);
-	
-	measurements[0]="$(echo "${measurements[0]} * 1000" | bc)";
-	measurements[1]="$(echo "${measurements[1]} * 1000" | bc)";
-	measurements[2]="$(echo "${measurements[2]} * 1000" | bc)";
+    # echo "DNS resolver,Min(ms,)Average(ms),Max(ms)";
+    for tld in "${tlds[@]}"; do
+	grep -P "\b${tld}\b\.\s" "$queries_path" >> "${tlds_sep_dir}/dot${tld}.txt";
+    done
 
-	echo "${RESOLVERS[$ip]},${measurements[1]},${measurements[0]},${measurements[2]}";
+    for tld in "${tlds[@]}"; do
+	for ip in "${!RESOLVERS[@]}"; do
+	    result_line="$(
+		dnsperf -d "${tlds_sep_dir}/dot${tld}.txt" -s "$ip" | grep -i 'average latency';
+            )";	   
+            readarray -t measurements < <(
+		echo "$result_line" | grep -Po '[\.\d]+';
+            );
+
+            measurements[0]="$(echo "${measurements[0]} * 1000" | bc)";
+            measurements[1]="$(echo "${measurements[1]} * 1000" | bc)";
+            measurements[2]="$(echo "${measurements[2]} * 1000" | bc)";
+
+            echo "${RESOLVERS[$ip]},${measurements[1]},${measurements[0]},${measurements[2]}" >> "${results_dir}/resultdot${tld}.txt";
+	done
     done
 }
 
