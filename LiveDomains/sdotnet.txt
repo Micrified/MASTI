@@ -1,0 +1,2 @@
+a1007.w43.akamai.net.	MX
+a.root-servers.net.	A
