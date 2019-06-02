@@ -21,4 +21,5 @@ Dependencies
 
 ## Examples
 
-    $ DoT.sh dns_resolvers.txt domainListTestSmall.tsv
+    $ ./DoT.sh dns_resolvers.txt domainListTestSmall.tsv
+    $ ./DoT.sh dns_resolvers.txt ../LiveDomains/dotau.txt
