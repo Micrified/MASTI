@@ -25,7 +25,7 @@ do
         tld=$(sed "${k}q;d" ../tld.txt)
         while read line; do           
             ./doh $line $j  >> Results/resultdot$tld.txt
-        done < "../LiveDomains/sdot$tld.txt"
+        done < "../LiveDomains/snoflagdot$tld.txt"
     done
     echo -e "\n" >> Results/resultdot$tld.txt
 done    
