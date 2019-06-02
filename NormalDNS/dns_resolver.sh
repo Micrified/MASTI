@@ -62,7 +62,7 @@ function perform_test()
     	measurements[1]="$(echo "${measurements[1]} * 1000" | bc)";
     	measurements[2]="$(echo "${measurements[2]} * 1000" | bc)";
 
-    	echo "${RESOLVERS[$ip]},${measurements[1]},${measurements[0]},${measurements[2]}" >> "${results_dir}/resultdot${tld}.txt";
+    	echo "${RESOLVERS[$ip]},${measurements[1]},${measurements[0]},${measurements[2]}" >> "${results_dir}/resultdot${tld}.csv";
     done
 }
 
