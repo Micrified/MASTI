@@ -55,18 +55,38 @@ int check_domain (const char *domain) {
 }
 
 
-int main (void) {
+int main (int argc, char *argv[]) {
 	char dbuf[256];
 	int c, idx = 0;
 	struct timespec delay = (struct timespec) {
 		.tv_sec = 0,
 		.tv_nsec = 250 * 1000000 // 250 ms
 	};
+	int clean = 0;
+
+	if (argc == 2) {
+		if (strcmp("-clean", argv[1]) == 0) {
+			clean = 1;
+		} else {
+			fprintf(stderr, "Usage: %s [-clean] < infile > outfile\n", argv[0]);
+			exit(EXIT_FAILURE);
+		}
+	} 
 
 	while ((c = getchar()) != EOF) {
 		if (c == '\n') {
 			dbuf[idx] = '\0';
-			if (check_domain(dbuf) == 1) {
+
+			// Drop characters until the first ., then replace with null
+			if (clean == 0) {
+				while (idx > 0 && dbuf[idx] != '.') idx--;
+				dbuf[idx] = '\0';
+			}
+			int result = check_domain(dbuf);
+			if (clean == 0) {
+				dbuf[idx] = '.';
+			}
+			if (result) {
 				printf("%s\n", dbuf);
 			}
 			idx = 0;
