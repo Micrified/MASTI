@@ -118,3 +118,9 @@ smtp.srv.ualberta.ca.	AAAA
 www.cangrejas.com.	A
 briarlane.ca.	A
 smtp.srv.ualberta.ca.	AAAA
+www.cangrejas.com.	A
+briarlane.ca.	A
+smtp.srv.ualberta.ca.	AAAA
+www.cangrejas.com.	A
+briarlane.ca.	A
+smtp.srv.ualberta.ca.	AAAA

@@ -6,7 +6,7 @@ for i in `seq 1 5`;
 do
 ## this puts all the searched domains from the inputted domain list
 tld=$(sed "${i}q;d" ../tld.txt)
-cat $inputDomainList | grep .$tld. >> TLDSep/dot$tld.txt
+cat $inputDomainList | grep .$tld.$(printf '\t') >> TLDSep/dot$tld.txt
 touch Results/resultdot$tld.txt
 done
 
@@ -36,3 +36,10 @@ do
     done
     echo -e "\n" >> Results/resultdot$tld.txt
 done    
+
+for i in `seq 1 5`;
+do
+## this puts all the searched domains from the inputted domain list
+tld=$(sed "${i}q;d" ../tld.txt)
+echo -e "Resolver:" >> Results/resultdot$tld.txt
+done
