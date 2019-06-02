@@ -1,14 +1,8 @@
 declare -A RESOLVERS;
 
-mkdir -p Results
+inputDomainList=domainListTestSmall.tsv
 
-for i in `seq 1 5`;
-do
-## this puts all the searched domains from the inputted domain list
-tld=$(sed "${i}q;d" ../tld.txt)
-cat $inputDomainList | grep .$tld. >> TLDSep/dot$tld.txt
-touch Results/resultdot$tld.txt
-done
+
 
 function load_resolvers()
 {
@@ -42,6 +36,8 @@ function perform_test()
 
 RESOLVERS_PATH="$1"; shift 1;
 QUERIES_PATH="$1";   shift 1;
+
+mkdir -p Results
 
 load_resolvers "$RESOLVERS_PATH";
 perform_test "$QUERIES_PATH";
