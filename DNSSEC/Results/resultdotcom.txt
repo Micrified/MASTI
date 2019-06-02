@@ -1,5 +1,5 @@
 Resolver: 8.8.8.8
-29
+28
 Resolver: 9.9.9.9
-350
+1522
 Resolver:
