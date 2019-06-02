@@ -1,12 +1,12 @@
 #!/bin/bash
 
-inputDomainList=domainListTestSmall.tsv
+#inputDomainList=domainListTestSmall.tsv
 
 for i in `seq 1 5`;
 do
 ## this puts all the searched domains from the inputted domain list
 tld=$(sed "${i}q;d" ../tld.txt)
-cat $inputDomainList | grep .$tld. | sed s'/.\t.*$//' >> TLDSep/dot$tld.txt
+#cat $inputDomainList | grep .$tld. | sed s'/.\t.*$//' >> TLDSep/dot$tld.txt
 touch Results/resultdot$tld.txt
 done
 
@@ -25,7 +25,7 @@ do
         tld=$(sed "${k}q;d" ../tld.txt)
         while read line; do           
             ./doh $line $j  >> Results/resultdot$tld.txt
-        done < "TLDSep/dot$tld.txt"
+        done < "../LiveDomains/sdot$tld.txt"
     done
     echo -e "\n" >> Results/resultdot$tld.txt
 done    
