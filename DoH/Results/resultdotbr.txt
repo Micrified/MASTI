@@ -5,3 +5,5 @@ Resolver: Cloudflare https://cloudflare-dns.com/dns-query
 80.90
 65.66
 Resolver:
+Resolver: Google https://dns.google.com/experimental
+Resolver: Cloudflare https://cloudflare-dns.com/dns-query
