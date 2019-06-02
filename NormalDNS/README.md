@@ -30,8 +30,8 @@ apt-get install -y libprotobuf-c-dev libfstrm-dev liblmdb-dev
 ```
 
 # DNS Script
-To run the Normal DNS script you have do go to the folder that contains the script, the resolvers list and the domain list and list them in the same order(see below).
+To run the Normal DNS script you have to go to the folder that contains the script, the resolvers list and the folder containing the files with TLDs called **LiveDomains** and list them in the same order(see below).
 
-nika@nika-VirtualBox:~/git/MASTI/NormalDNS$ ./dns_resolver.sh dns_resolvers.txt domainListTestSmall.tsv 
+nika@nika-VirtualBox:~/git/MASTI/NormalDNS$ ./dns_resolver.sh dns_resolvers.txt LiveDomains 
 
-The script will create the two folders **TLDsep** where the top-level domains will be separated in different files and **Results**, where the results for every TLD  will be stored. When the run is finished, the output files will be there. To delete the folders and run the script again, use the cleaning script **clean.sh** by specifying the names of the folders that need to be removed - respectively **TLDsep** and **Results**.
+The script will create the folder **Results**, where the results for every TLD  will be stored as .csv files. When the run is finished, the output files will be there. To delete the folders and run the script again, use the cleaning script **clean.sh** by specifying the names of the folders that need to be removed - respectively **Results**.
