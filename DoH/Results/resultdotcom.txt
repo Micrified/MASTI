@@ -11,3 +11,6 @@ Resolver: Cloudflare https://cloudflare-dns.com/dns-query
 62.70
 61.49
 Resolver:
+Resolver: Google https://dns.google.com/experimental
+Resolver: Cloudflare https://cloudflare-dns.com/dns-query
+Resolver:
