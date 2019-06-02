@@ -18,8 +18,8 @@ int g_b_idx = 0;
 char g_b[MAX_HOST];
 
 
-void panic () {
-	fprintf(stderr, "Err: %s\n", strerror(errno));
+void panic (const char *note) {
+	fprintf(stderr, "Err (%s): %s\n", note, strerror(errno));
 	exit(EXIT_FAILURE);
 }
 
@@ -28,19 +28,19 @@ int check_domain (const char *domain) {
 
 	g_argv[3] = domain;
 
-	if (pipe(fds) == -1) panic();
+	if (pipe(fds) == -1) panic("pipe");
 
-	if ((pid = fork()) == -1) panic();
+	if ((pid = fork()) == -1) panic("fork");
 	
 	// Child
 	if (pid == 0) {
 		close(fds[0]);
 		close(STDOUT_FILENO);
 		if (dup(fds[1]) == -1) {
-			panic();
+			panic("dup");
 		}
 		execvp(CMD_NAME, g_argv);
-		panic();
+		panic("exec");
 	} else {
 		close(fds[1]);
 		int c;
@@ -48,6 +48,7 @@ int check_domain (const char *domain) {
 		while (read(fds[0], &c, 1) == 1) {
 			g_b[g_b_idx++] = c;
 		}
+		waitpid(pid, NULL, 0x0);
 		g_b[strlen(domain)] = '\0';
 		close(fds[0]);
 		return (strcmp(g_b, domain) == 0);
