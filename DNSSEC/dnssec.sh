@@ -1,12 +1,12 @@
 #!/bin/bash
 
-inputDomainList=domainListTestSmall.tsv
+#inputDomainList=domainListTestSmall.tsv
 
 for i in `seq 1 5`;
 do
 ## this puts all the searched domains from the inputted domain list
 tld=$(sed "${i}q;d" ../tld.txt)
-cat $inputDomainList | grep .$tld.$(printf '\t') >> TLDSep/dot$tld.txt
+#cat $inputDomainList | grep .$tld.$(printf '\t') >> TLDSep/dot$tld.txt
 touch Results/resultdot$tld.txt
 done
 
@@ -32,7 +32,7 @@ do
         tld=$(sed "${j}q;d" ../tld.txt)
         while read line; do 
             dig @$resolver $line + dnssec +multi  | pcregrep -M "flags:(.*)ad(.|\n)*Query time:.*" | grep time | grep -Eo '[0-9]{1,}' >> Results/resultdot$tld.txt
-        done < "TLDSep/dot$tld.txt"
+        done < "../LiveDomains/sdot$tld.txt"
     done
     echo -e "\n" >> Results/resultdot$tld.txt
 done    
