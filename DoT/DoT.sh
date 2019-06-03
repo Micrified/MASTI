@@ -45,7 +45,6 @@ function perform_test()
     local ip='';
     local result_line='';
     declare -a measurements=();
-    echo "DNS resolver,Min(ms),Average(ms),Max(ms)";
     for ip in "${!RESOLVERS[@]}"; do
         result=$(./flame -f $query_path -P tcptls -p 853 "$ip" -n 1 -c 1 -Q 100 | grep "min/avg/max"  | grep -Po -m1 "[\d+\.\d+/?]+ms" | sed 's/ms//' | sed 's/\//,/g')
         echo "${RESOLVERS[$ip]},$result"
