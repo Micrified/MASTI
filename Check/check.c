@@ -59,9 +59,10 @@ int check_domain (const char *domain) {
 int main (int argc, char *argv[]) {
 	char dbuf[256];
 	int c, idx = 0;
+	int count = 0;
 	struct timespec delay = (struct timespec) {
 		.tv_sec = 0,
-		.tv_nsec = 250 * 1000000 // 250 ms
+		.tv_nsec = 20 * 1000000 // 20 ms
 	};
 	int clean = 0;
 
@@ -74,7 +75,7 @@ int main (int argc, char *argv[]) {
 		}
 	} 
 
-	while ((c = getchar()) != EOF) {
+	while (count < 1000 && (c = getchar()) != EOF) {
 		if (c == '\n') {
 			dbuf[idx] = '\0';
 
@@ -88,6 +89,7 @@ int main (int argc, char *argv[]) {
 				dbuf[idx] = '.';
 			}
 			if (result) {
+				count++;
 				printf("%s\n", dbuf);
 			}
 			idx = 0;
