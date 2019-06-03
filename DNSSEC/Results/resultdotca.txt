@@ -1,11 +1,7 @@
 Resolver: 8.8.8.8
 26
 63
-
-
 Resolver: 9.9.9.9
 22
 20
-
-
 Resolver:
