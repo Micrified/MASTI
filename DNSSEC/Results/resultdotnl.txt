@@ -3,3 +3,4 @@ Resolver: 8.8.8.8
 Resolver: 9.9.9.9
 120
 Resolver:
+Resolver: 8.8.8.8
