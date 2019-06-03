@@ -81,14 +81,14 @@ def call_all_the_scripts():
 	#DNSnormal
 	os.chdir('../NormalDNS/')
 	subprocess.call(['bash','clean.sh'])
-	subprocess.call(['bash','./dns_resolver.sh', 'dns_resolvers.txt','domainListTestSmall.tsv'])
+	subprocess.call(['bash','./dns_resolver.sh', '../dns_resolvers.txt','../domainListTestSmall.tsv'])
 	#DNSSec
 	os.chdir('../DNSSEC/')
 	subprocess.call(['bash','clean.sh'])
 	subprocess.call(['bash','dnssec.sh'])
 	#DoT
 	os.chdir('../DoT/')
-	subprocess.call(['bash','./DoT.sh', 'dns_resolvers.txt','domainListTestSmall.tsv']) # Change  the second argument so that it works
+	subprocess.call(['bash','./DoT.sh', '../dns_resolvers.txt','../domainListTestSmall.tsv']) # Change  the second argument so that it works
 	#DoH
 	os.chdir('../DoH/')
 	subprocess.call(['bash','clean.sh'])
