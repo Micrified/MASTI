@@ -1,4 +1,5 @@
 declare -A RESOLVERS;
+declare -A QUERIES_FILES;
 
 inputDomainList=domainListTestSmall.tsv
 
@@ -23,16 +24,12 @@ function load_resolvers()
 function load_queries()
 {
     local queries_dir="$(readlink -e "$1")"; shift 1;
-
     local query_filepath='';
     local query_tld='';
-
     for query_filepath in ${queries_dir}/*; do
     query_tld="$(
-            basename "$query_filepath" \
-                | grep -Po '(?<=^dot).*?(?=\.)';
+            basename "$query_filepath" | grep -Po '(?<=^dot).*?(?=\.)';
         )";
-
     if [ -n "$query_tld" ];then
         QUERIES_FILES["$query_tld"]="$query_filepath";
     fi
@@ -61,7 +58,7 @@ QUERIES_PATH="$1";   shift 1;
 mkdir -p Results
 
 load_resolvers "$RESOLVERS_PATH";
-load_queries   "$QUERIES_DIR";
+load_queries   "$QUERIES_PATH";
 
 for TLD in "${!QUERIES_FILES[@]}"; do
     perform_test "$TLD" "${QUERIES_FILES[$TLD]}";
