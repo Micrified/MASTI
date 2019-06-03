@@ -48,7 +48,7 @@ function perform_test()
     for ip in "${!RESOLVERS[@]}"; do
         echo "Checking $tld on $RESOLVERS[$ip].."
         result=$(./flame -f $query_path -P tcptls -p 853 "$ip" -n 1 -c 1 -Q 10 | grep "min/avg/max"  | grep -Po -m1 "[\d+\.\d+/?]+ms" | sed 's/ms//' | sed 's/\//,/g')
-        echo "${RESOLVERS[$ip]},$result" >> "./Results/resultdot$tld.txt"
+        echo "${RESOLVERS[$ip]},$result" >> "./Results/resultdot$tld.csv"
     done
 }
 
