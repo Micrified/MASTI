@@ -5,3 +5,4 @@ Resolver: 9.9.9.9
 22
 20
 Resolver:
+Resolver: 8.8.8.8
