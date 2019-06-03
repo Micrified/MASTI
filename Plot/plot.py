@@ -5,8 +5,8 @@ import csv
 import numpy as np
 import time 
 
-def process_txt(path, name, flag=True):
-	with open("results"+name+".csv", 'w') as csvfile:
+def process_txt(path, output_path, flag=True):
+	with open(output_path, 'w') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',')
 		with open(path) as file:
 			minimum = None
@@ -43,7 +43,36 @@ def process_txt(path, name, flag=True):
 						mean += int(line)
 						no += 1
 					
-					
+def combain_all_csv(tlds,no):
+	results = {
+		'DNS' : '../NormalDNS/Results/',
+		'DNSSec' : '../DNSSEC/Results/',
+		'DoT' : '../DoT/Results/',
+		'DoH' : '../DoH/Results/'
+	}
+	with open('allResults.csv', 'w') as csvfile:
+		writer = csv.writer(csvfile, delimiter=',')
+		for tld in tlds:
+			with open(results['DNS']+'resultdot'+tld+'.csv', 'r') as DNS_file:
+				with open(results['DNSSec']+'resultdot'+tld+'.csv', 'r') as DNSSec_file:
+					with open(results['DoT']+'resultdot'+tld+'.csv', 'r') as DoT_file:
+						with open(results['DoH']+'resultdot'+tld+'.csv', 'r') as DoH_file:
+							dns_rows =[r for r in csv.reader(DNS_file)]
+							dnssec_rows = [r for r in csv.reader(DNSSec_file)]
+							doh_rows = [r for r in csv.reader(DoH_file)]
+							dot_rows = [r for r in csv.reader(DoT_file)]
+							writer.writerow([tld])
+							for x in range(0,len(dns_rows)):
+								
+								writer.writerow(
+									[
+										dns_rows[x][0],dns_rows[x][1],dns_rows[x][2],dns_rows[x][3],' ',
+										dnssec_rows[x][1],dnssec_rows[x][2],dnssec_rows[x][3],' ',
+										dot_rows[x][1],dot_rows[x][2],dot_rows[x][3],' ',
+										doh_rows[x][1],doh_rows[x][2],doh_rows[x][3],' ',
+									]
+								)
+
 def process_csv(path):
 	with open(path, 'r') as file:
 		reader = csv.reader(file)
@@ -181,14 +210,16 @@ if __name__ == "__main__":
 	DoH_path = "../DoH/"
 
 	#print_MOD()
-	call_all_the_scripts()
+	#call_all_the_scripts()
 
 
-	# TLDS=["com", "net", "au", "nl"]#, "ca"]
+	TLDS=["com", "net", "au", "nl", "ca"]
 	# for tld in TLDS:
-	# 	process_txt(DNSSec_path+"Results/resultdot"+tld+".txt", "DNSSec"+tld,False)
-	# 	process_txt(DoH_path+"Results/resultdot"+tld+".txt", "DoH"+tld)    
+	# 	process_txt(DNSSec_path+"Results/resultdot"+tld+".txt", DNSSec_path+"Results/resultdot"+tld+".csv",False)
+	# 	process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
 	
+	combain_all_csv(TLDS,2)
+
 	# r, minlist, avglist, maxlist = process_csv(DNS_path+'Results/resultdotbr.csv')
 	# rT = tuple(r)
 	# minT = tuple(minlist)
