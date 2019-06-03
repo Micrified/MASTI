@@ -10,4 +10,4 @@
 #rm -rfv '/home/nika/git/MASTI/NormalDNS/Results';
 
 cd Results
-rm *.txt
+rm *.csv
