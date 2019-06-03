@@ -46,8 +46,9 @@ function perform_test()
     local result_line='';
     declare -a measurements=();
     for ip in "${!RESOLVERS[@]}"; do
-        result=$(./flame -f $query_path -P tcptls -p 853 "$ip" -n 1 -c 1 -Q 100 | grep "min/avg/max"  | grep -Po -m1 "[\d+\.\d+/?]+ms" | sed 's/ms//' | sed 's/\//,/g')
-        echo "${RESOLVERS[$ip]},$result"
+        echo "Checking $tld on $RESOLVERS[$ip].."
+        result=$(./flame -f $query_path -P tcptls -p 853 "$ip" -n 1 -c 1 -Q 10 | grep "min/avg/max"  | grep -Po -m1 "[\d+\.\d+/?]+ms" | sed 's/ms//' | sed 's/\//,/g')
+        echo "${RESOLVERS[$ip]},$result" >> "./Results/resultdot$tld.txt"
     done
 }
 
@@ -55,6 +56,7 @@ RESOLVERS_PATH="$1"; shift 1;
 QUERIES_PATH="$1";   shift 1;
 
 mkdir -p Results
+rm -f Results/*
 
 load_resolvers "$RESOLVERS_PATH";
 load_queries   "$QUERIES_PATH";
