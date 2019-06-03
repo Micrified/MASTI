@@ -81,7 +81,7 @@ def call_all_the_scripts():
 	#DNSnormal
 	os.chdir('../NormalDNS/')
 	subprocess.call(['bash','clean.sh'])
-	subprocess.call(['bash','./dns_resolver.sh', '../dns_resolvers.txt','../domainListTestSmall.tsv'])
+	subprocess.call(['bash','./dns_resolver.sh', '../dns_resolvers.txt','../LiveDomains'])
 	#DNSSec
 	os.chdir('../DNSSEC/')
 	subprocess.call(['bash','clean.sh'])
@@ -115,6 +115,19 @@ def autolabel(rects, xpos='center'):
                     textcoords="offset points",  # in both directions
                     ha=ha[xpos], va='bottom')
 
+def print_MOD():
+	a = """
+ /$$$$$$$                        /$$           /$$   /$$ /$$   /$$ /$$$$$$$  /$$$$$$$$ /$$$$$$$  /$$$$$$$$
+| $$__  $$                      | $$          | $$  | $$| $$  | $$| $$__  $$| $$_____/| $$__  $$|__  $$__/
+| $$  \ $$  /$$$$$$   /$$$$$$  /$$$$$$        | $$  | $$| $$  | $$| $$  \ $$| $$      | $$  \ $$   | $$   
+| $$$$$$$  /$$__  $$ /$$__  $$|_  $$_/        | $$$$$$$$| $$  | $$| $$$$$$$ | $$$$$   | $$$$$$$/   | $$   
+| $$__  $$| $$$$$$$$| $$  \__/  | $$          | $$__  $$| $$  | $$| $$__  $$| $$__/   | $$__  $$   | $$   
+| $$  \ $$| $$_____/| $$        | $$ /$$      | $$  | $$| $$  | $$| $$  \ $$| $$      | $$  \ $$   | $$   
+| $$$$$$$/|  $$$$$$$| $$        |  $$$$/      | $$  | $$|  $$$$$$/| $$$$$$$/| $$$$$$$$| $$  | $$   | $$   
+|_______/  \_______/|__/         \___/        |__/  |__/ \______/ |_______/ |________/|__/  |__/   |__/   
+
+	"""
+	print(a)
 
 if __name__ == "__main__":
 	
@@ -123,6 +136,7 @@ if __name__ == "__main__":
 	DoT_path = "../DoT/"
 	DoH_path = "../DoH/"
 
+	print_MOD()
 	call_all_the_scripts()
 
 
