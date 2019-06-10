@@ -2,15 +2,5 @@ Google  https://dns.google.com/experimental
 Cloudflare  https://cloudflare-dns.com/dns-query 	
 Quad9   https://dns.quad9.net/dns-query
 CleanBrowsing   https://doh.cleanbrowsing.org/doh/family-filter/
-PowerDNS 	https://doh.powerdns.org 	Based on dnsdist-doh branch
 blahdns.com_Japan 	https://doh-jp.blahdns.com/dns-query
 blahdns.com_Germany: https://doh-de.blahdns.com/dns-query 
-NekomimiRouter.com 	https://dns.dns-over-https.com/dns-query 	
-SecureDNS.eu 	https://doh.securedns.eu/dns-query 	
-Rubyfish.cn 	https://dns.rubyfish.cn/dns-query 	
-Commons Host 	https://commons.host 	
-DnsWarden 	    https://doh.dnswarden.com/adblock
-aaflalo.me_US 	https://dns-gcp.aaflalo.me/dns-query
-aaflalo.me_EU:  https://dns.aaflalo.me/dns-query 
-FoundationfAP 	https://doh.appliedprivacy.net/query
-captnemo.in 	https://doh.captnemo.in/dns-query
