@@ -20,7 +20,7 @@ files along with all dependencies it requires.
 
 To install the dependencies under Debian/Ubuntu:
 ```
-apt-get install -y libbind-dev libkrb5-dev libssl-dev libcap-dev libxml2-dev libjson-c-dev libgeoip-dev autoconf
+apt-get install -y libbind-dev libkrb5-dev libssl-dev libcap-dev libxml2-dev libjson-c-dev libgeoip-dev autoconf libtool
 ```
 
 Depending on how BIND is compiled on Debian and Ubuntu you might need these
