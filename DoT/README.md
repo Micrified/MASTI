@@ -21,6 +21,42 @@ Installing on Ubuntu only requires a few simple steps.
 4. Get `libnsl` [here](http://www.linuxfromscratch.org/blfs/view/svn/basicnet/libnsl.html) by downloading and following the instructions for make and install. As usual do them exactly as specified. You may need to add some more `sudo` between their `&&`'d commands though.
 5. Use `apt-get` to acquire `libldns` as follows: `sudo apt-get install libldns-dev`
 
+
+## Copy paste instruction for Ubuntu
+```
+sudo apt-get install autopoint
+cd ~/Downloads/
+wget https://downloads.sourceforge.net/libtirpc/libtirpc-1.1.4.tar.bz2
+tar -xvjf libtirpc-1.1.4.tar.bz2
+cd libtirpc-1.1.4/
+./configure --prefix=/usr                                   \
+            --sysconfdir=/etc                               \
+            --disable-static                                \
+            --disable-gssapi                                &&
+make
+sudo make install &&
+sudo mv -v /usr/lib/libtirpc.so.* /lib &&
+sudo ln -sfv ../../lib/libtirpc.so.3.0.0 /usr/lib/libtirpc.so
+cd ~/Downloads
+wget https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4/rpcsvc-proto-1.4.tar.gz
+tar -xvzf rpcsvc-proto-1.4.tar.gz
+cd rpcsvc-proto-1.4/
+./configure --sysconfdir=/etc && make
+sudo make install
+cd ~/Downloads
+wget https://github.com/thkukuk/libnsl/archive/v1.2.0/libnsl-1.2.0.tar.gz
+tar -xvzf libnsl-1.2.0.tar.gz
+cd libnsl-1.2.0/
+autoreconf -fi                &&
+./configure --sysconfdir=/etc &&
+make
+sudo make install                  &&
+sudo mv /usr/lib/libnsl.so.2* /lib &&
+sudo ln -sfv ../../lib/libnsl.so.2.0.0 /usr/lib/libnsl.so
+sudo apt-get install libldns-dev
+```
+
+
 ## Usage
 
     DoT.sh path_to_resolvers path_to_queries
