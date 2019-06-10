@@ -1,2 +1,6 @@
 8.8.8.8	Google
 1.1.1.1	Cloudflare
+9.9.9.9 Quad9
+185.228.168.9 CleanBrowsing
+108.61.201.119 BlahDNSJapan
+159.69.198.101 BlahDNSGermany
