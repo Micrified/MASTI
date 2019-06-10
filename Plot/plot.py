@@ -1,8 +1,8 @@
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import subprocess
 import os
 import csv
-import numpy as np
+# import numpy as np
 import time 
 
 def process_txt(path, output_path, flag=True):
