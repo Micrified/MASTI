@@ -18,7 +18,7 @@ done
 # done < "../dns_resolvers.txt"
 
 ## Here you can select how many of the selected resolvers you want to be using
-for k in `seq 1 2`;
+for k in `seq 1 6`;
 do 
     resolver=$(sed "${k}q;d" ../dns_resolversIP.txt)
     for FILE in Results/*.txt
