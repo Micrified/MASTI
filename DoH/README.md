@@ -18,6 +18,11 @@ Options:
 - `-h` shows help output
 - `-v` enables verbose mode
 
+## Ubuntu/Debian dependency
+
+```
+sudo apt-get install libcurl4-openssl-dev
+```
 ## Examples
 
     $ doh www.example.com
