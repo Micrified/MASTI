@@ -1,0 +1,6 @@
+Google https://dns.google.com/experimental,4.21,4.96,12.19
+Cloudflare https://cloudflare-dns.com/dns-query,5.11,5.85,17.03
+Quad9 https://dns.quad9.net/dns-query,6.55,8.46,36.27
+CleanBrowsing https://doh.cleanbrowsing.org/doh/family-filter/,4.01,5.2,15.29
+blahdns.com_Japan https://doh-jp.blahdns.com/dns-query,4.32,5.18,10.65
+blahdns.com_Germany: https://doh-de.blahdns.com/dns-query,4.04,4.73,14.83

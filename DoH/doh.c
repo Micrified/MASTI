@@ -706,9 +706,9 @@ int main(int argc, char **argv)
   resolvers[1]="https://cloudflare-dns.com/dns-query";
   resolvers[2]="https://dns.quad9.net/dns-query";
   resolvers[3]="https://doh.cleanbrowsing.org/doh/family-filter/";
-  resolvers[4]="https://doh.powerdns.org";
-  resolvers[5]="https://doh-jp.blahdns.com/dns-query";
-  resolvers[6]="https://doh-de.blahdns.com/dns-query";
+  // resolvers[4]="https://doh.powerdns.org";
+  resolvers[4]="https://doh-jp.blahdns.com/dns-query";
+  resolvers[5]="https://doh-de.blahdns.com/dns-query";
   resolvers[7]="https://dns.dns-over-https.com/dns-query";
   resolvers[8]="https://doh.securedns.eu/dns-query";
   resolvers[9]="https://dns.rubyfish.cn/dns-query";
@@ -851,7 +851,7 @@ int main(int argc, char **argv)
   double msec = diff * 100000 / CLOCKS_PER_SEC;
 
   if(successful) {
-    int i;
+    //int i;
     //printf("%s from %s\n", host, resolvers[resolver_no]);
     printf("%.2f\n", msec/100);
     // printf("TTL: %u seconds\n", d.ttl);
