@@ -1,0 +1,5 @@
+Google https://dns.google.com/experimental,4.08,4.97,15.26
+Cloudflare https://cloudflare-dns.com/dns-query,4.99,5.72,12.38
+CleanBrowsing https://doh.cleanbrowsing.org/doh/family-filter/,4.52,6.27,45.39
+blahdns.com_Japan https://doh-jp.blahdns.com/dns-query,4.37,5.19,11.01
+blahdns.com_Germany: https://doh-de.blahdns.com/dns-query,3.95,4.71,10.86
