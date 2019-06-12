@@ -109,19 +109,19 @@ def check_install_dependecies():
 
 def call_all_the_scripts():
 	#DNSnormal
-	os.chdir('../NormalDNS/')
-	subprocess.call(['bash','clean.sh'])
-	subprocess.call(['bash','./dns_resolver.sh', '../dns_resolvers.txt','../LiveDomains/'])
-	#DNSSec
-	os.chdir('../DNSSEC/')
-	subprocess.call(['bash','clean.sh'])
-	subprocess.call(['bash','dnssec.sh'])
-	#DoT
-	os.chdir('../DoT/')
-	subprocess.call(['bash','./DoT.sh', '../dns_resolvers.txt','../LiveDomains/']) # Change  the second argument so that it works
-	#DoH
+	# os.chdir('../NormalDNS/')
+	# subprocess.call(['bash','clean.sh'])
+	# subprocess.call(['bash','./dns_resolver.sh', '../dns_resolvers.txt','../LiveDomains/'])
+	# #DNSSec
+	# os.chdir('../DNSSEC/')
+	# subprocess.call(['bash','clean.sh'])
+	# subprocess.call(['bash','dnssec.sh'])
+	# #DoT
+	# os.chdir('../DoT/')
+	# subprocess.call(['bash','./DoT.sh', '../dns_resolvers.txt','../LiveDomains/']) # Change  the second argument so that it works
+	# #DoH
 	os.chdir('../DoH/')
-	subprocess.call(['bash','clean.sh'])
+	# subprocess.call(['bash','clean.sh'])
 	subprocess.call(['bash','doh.sh'])
 
 	
@@ -210,7 +210,7 @@ if __name__ == "__main__":
 	DoH_path = "../DoH/"
 
 	#print_MOD()
-	#call_all_the_scripts()
+	call_all_the_scripts()
 
 
 	TLDS=["com", "net", "au", "nl", "ca"]
@@ -218,7 +218,7 @@ if __name__ == "__main__":
 	# 	process_txt(DNSSec_path+"Results/resultdot"+tld+".txt", DNSSec_path+"Results/resultdot"+tld+".csv",False)
 	# 	process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
 	
-	combain_all_csv(TLDS,2)
+	# combain_all_csv(TLDS,2)
 
 	# r, minlist, avglist, maxlist = process_csv(DNS_path+'Results/resultdotbr.csv')
 	# rT = tuple(r)
