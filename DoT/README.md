@@ -24,7 +24,9 @@ Installing on Ubuntu only requires a few simple steps.
 
 ## Copy paste instruction for Ubuntu
 ```
-sudo apt-get install autopoint bzip2 make
+sudo add-apt-repository ppa:acooks/libwebsockets6
+sudo apt-get update
+sudo apt-get install autopoint bzip2 make libuv1.dev
 cd ~/Downloads/
 wget https://downloads.sourceforge.net/libtirpc/libtirpc-1.1.4.tar.bz2
 tar -xvjf libtirpc-1.1.4.tar.bz2
