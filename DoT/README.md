@@ -24,7 +24,7 @@ Installing on Ubuntu only requires a few simple steps.
 
 ## Copy paste instruction for Ubuntu
 ```
-sudo apt-get install autopoint
+sudo apt-get install autopoint bzip2
 cd ~/Downloads/
 wget https://downloads.sourceforge.net/libtirpc/libtirpc-1.1.4.tar.bz2
 tar -xvjf libtirpc-1.1.4.tar.bz2
