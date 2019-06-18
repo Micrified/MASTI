@@ -17,7 +17,7 @@ def process_txt(path, output_path, flag=True):
 				if line.startswith("Resolver:"):
 					if no != 0:
 						mean = mean/no
-						writer.writerow([resolver,round(minimum,2),round(mean,2),round(maximum,2)])
+						writer.writerow([resolver,round(minimum,2),round(mean,2),round(maximum,2),round(no/1000.0,2)])
 						minimum = None
 						maximum = None
 						mean = 0
@@ -109,20 +109,22 @@ def check_install_dependecies():
 
 def call_all_the_scripts():
 	#DNSnormal
-	# os.chdir('../NormalDNS/')
-	# subprocess.call(['bash','clean.sh'])
-	# subprocess.call(['bash','./dns_resolver.sh', '../dns_resolvers.txt','../LiveDomains/'])
+	os.chdir('../NormalDNS/')
+	subprocess.call(['bash','clean.sh'])
+	subprocess.call(['bash','./dns_resolver.sh', '../dns_resolvers.txt','../LiveDomains/'])
 	# #DNSSec
-	# os.chdir('../DNSSEC/')
-	# subprocess.call(['bash','clean.sh'])
-	# subprocess.call(['bash','dnssec.sh'])
+	os.chdir('../DNSSEC/')
+	subprocess.call(['bash','clean.sh'])
+	subprocess.call(['bash','dnssec.sh'])
 	# #DoT
-	# os.chdir('../DoT/')
-	# subprocess.call(['bash','./DoT.sh', '../dns_resolvers.txt','../LiveDomains/']) # Change  the second argument so that it works
+	os.chdir('../DoT/')
+	subprocess.call(['bash','clean.sh'])
+	subprocess.call(['bash','./DoT.sh', '../dns_resolvers.txt','../LiveDomains/']) # Change  the second argument so that it works
 	# #DoH
 	os.chdir('../DoH/')
-	# subprocess.call(['bash','clean.sh'])
+	subprocess.call(['bash','clean.sh'])
 	subprocess.call(['bash','doh.sh'])
+	os.chdir('../Plot/')
 
 	
 
@@ -153,16 +155,16 @@ if __name__ == "__main__":
 	DoH_path = "../DoH/"
 
 	#print_MOD()
-#	call_all_the_scripts()
+	call_all_the_scripts()
 
 
 	TLDS=["com", "net", "au", "nl", "ca"]
-	# for tld in TLDS:
-	#  	process_txt(DNSSec_path+"Results/resultdot"+tld+".txt", DNSSec_path+"Results/resultdot"+tld+".csv",False)
-	#  	process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
+	for tld in TLDS:
+		process_txt(DNSSec_path+"Results/resultdot"+tld+".txt", DNSSec_path+"Results/resultdot"+tld+".csv",False)
+	  	process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
 	
 	combain_all_csv(TLDS,2)
-
+	subprocess.call(['bash','complete.sh'])
 	# r, minlist, avglist, maxlist = process_csv(DNS_path+'Results/resultdotbr.csv')
 	# rT = tuple(r)
 	# minT = tuple(minlist)
