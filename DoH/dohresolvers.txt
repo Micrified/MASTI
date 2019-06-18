@@ -2,4 +2,3 @@ Google  https://dns.google.com/experimental
 Cloudflare  https://cloudflare-dns.com/dns-query 	
 CleanBrowsing   https://doh.cleanbrowsing.org/doh/family-filter/
 blahdns.com_Germany: https://doh-de.blahdns.com/dns-query 
-159.65.196.168 libdsm.org
