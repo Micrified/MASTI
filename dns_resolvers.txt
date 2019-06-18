@@ -2,4 +2,3 @@
 1.1.1.1	Cloudflare
 185.228.168.9 CleanBrowsing
 159.69.198.101 BlahDNSGermany
-159.65.196.168 libdsm.org
