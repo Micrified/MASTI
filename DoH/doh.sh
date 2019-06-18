@@ -8,7 +8,7 @@ touch Results/resultdot$tld.txt
 done
 
 ## Here you can select how many of the selected resolvers you want to be using
-for j in `seq 4 6`;
+for j in `seq 1 4`;
 do 
     resolver=$(sed "${j}q;d" dohresolvers.txt)
     for FILE in Results/*.txt
