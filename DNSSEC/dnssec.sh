@@ -31,7 +31,7 @@ do
         ## this puts all the searched domains from the inputted domain list
         tld=$(sed "${j}q;d" ../tld.txt)
         while read line; do 
-            dig @$resolver $line +dnssec +multi  | pcregrep -M "flags:(.*)ad(.|\n)*Query time:.*" | grep time | grep -Eo '[0-9]{1,}' >> Results/resultdot$tld.txt
+            dig @$resolver $line +dnssec +multi  | pcregrep -M "flags:(.*)ad(.|\n)*Query time:.*" | grep "Query time" | grep -Eo '[0-9]{1,}' >> Results/resultdot$tld.txt
         done < "../LiveDomains/dot$tld.txt"
     done
     echo -e "\n" >> Results/resultdot$tld.txt
