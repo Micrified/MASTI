@@ -50,7 +50,7 @@ def combain_all_csv(tlds,no):
 		'DoT' : '../DoT/Results/',
 		'DoH' : '../DoH/Results/'
 	}
-	with open('allResults.csv', 'w') as csvfile:
+	with open('allResultsHungary.csv', 'w') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',')
 		for tld in tlds:
 			with open(results['DNS']+'resultdot'+tld+'.csv', 'r') as DNS_file:
@@ -155,16 +155,16 @@ if __name__ == "__main__":
 	DoH_path = "../DoH/"
 
 	#print_MOD()
-	call_all_the_scripts()
+	#call_all_the_scripts()
 
 
 	TLDS=["com", "net", "au", "nl", "ca"]
 	for tld in TLDS:
 		process_txt(DNSSec_path+"Results/resultdot"+tld+".txt", DNSSec_path+"Results/resultdot"+tld+".csv",False)
-	  	process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
+		process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
 	
 	combain_all_csv(TLDS,2)
-	subprocess.call(['bash','complete.sh'])
+	#subprocess.call(['bash','complete.sh'])
 	# r, minlist, avglist, maxlist = process_csv(DNS_path+'Results/resultdotbr.csv')
 	# rT = tuple(r)
 	# minT = tuple(minlist)
