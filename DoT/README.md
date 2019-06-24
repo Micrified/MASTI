@@ -1,6 +1,18 @@
 # DoT
 
+<<<<<<< HEAD
  Based on the flamethrower application at [link](https://github.com/DNS-OARC/flamethrower).
+=======
+ Uses the flame(thrower) application at [link](https://github.com/DNS-OARC/flamethrower) with supplied domains and resolvers. Flame is prebuild and the binary is given in the folder. If for whatever reason it doesn't work you can try to build it yourself by going to their repository.
+ 
+ The flame binary is used in this script with multiple parameters:
+  * -f: followed by a file with domains to be resolved
+  * -P: followed by the string tcptls to tell it to perform DoT
+  * -p: followed by 853 to indicate to use the DoT port
+  * -n: followed by 1 to go through the domain file once
+  * -c: followed by 1 to use only 1 packet generator (in line with other tools)
+  * -Q: followed by 10 to rate limit it to 10 packets per second (in line with other tools)
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
 
 Dependencies
 ------------
@@ -62,12 +74,21 @@ sudo apt-get install libldns-dev
 
 ## Usage
 
+<<<<<<< HEAD
     DoT.sh path_to_resolvers path_to_queries
+=======
+    DoT.sh path_to_resolvers_FILE path_to_queries_FOLDER
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
 
     resolvers is a space-delimeted file with ip-name combinations
     queries is a space-delimeted file with query-querytype combinations
 
 ## Examples
 
+<<<<<<< HEAD
     $ ./DoT.sh dns_resolvers.txt domainListTestSmall.tsv
     $ ./DoT.sh dns_resolvers.txt ../LiveDomains/dotau.txt
+=======
+    $ ./DoT.sh dns_resolvers.txt ./domains/
+    $ ./DoT.sh dns_resolvers.txt ../LiveDomains/
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3

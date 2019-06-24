@@ -50,7 +50,11 @@ def combain_all_csv(tlds,no):
 		'DoT' : '../DoT/Results/',
 		'DoH' : '../DoH/Results/'
 	}
+<<<<<<< HEAD
 	with open('allResults.csv', 'w') as csvfile:
+=======
+	with open('allResultsHungary.csv', 'w') as csvfile:
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
 		writer = csv.writer(csvfile, delimiter=',')
 		for tld in tlds:
 			with open(results['DNS']+'resultdot'+tld+'.csv', 'r') as DNS_file:
@@ -155,16 +159,27 @@ if __name__ == "__main__":
 	DoH_path = "../DoH/"
 
 	#print_MOD()
+<<<<<<< HEAD
 	call_all_the_scripts()
+=======
+	#call_all_the_scripts()
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
 
 
 	TLDS=["com", "net", "au", "nl", "ca"]
 	for tld in TLDS:
 		process_txt(DNSSec_path+"Results/resultdot"+tld+".txt", DNSSec_path+"Results/resultdot"+tld+".csv",False)
+<<<<<<< HEAD
 	  	process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
 	
 	combain_all_csv(TLDS,2)
 	subprocess.call(['bash','complete.sh'])
+=======
+		process_txt(DoH_path+"Results/resultdot"+tld+".txt", DoH_path+"Results/resultdot"+tld+".csv")    
+	
+	combain_all_csv(TLDS,2)
+	#subprocess.call(['bash','complete.sh'])
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
 	# r, minlist, avglist, maxlist = process_csv(DNS_path+'Results/resultdotbr.csv')
 	# rT = tuple(r)
 	# minT = tuple(minlist)

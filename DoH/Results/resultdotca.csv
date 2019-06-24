@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 Google https://dns.google.com/experimental,4.1,4.95,12.61
 Cloudflare https://cloudflare-dns.com/dns-query,5.08,5.76,14.82
 Quad9 whatever,0,0,0
 CleanBrowsing https://doh.cleanbrowsing.org/doh/family-filter/,4.56,6.56,46.47
 blahdns.com_Japan https://doh-jp.blahdns.com/dns-query,4.33,5.18,8.0
 blahdns.com_Germany: https://doh-de.blahdns.com/dns-query,4.06,4.76,10.04
+=======
+Google https://dns.google.com/experimental,10.91,11.1,17.09,0.96
+Cloudflare https://cloudflare-dns.com/dns-query,12.52,12.7,16.83,0.96
+CleanBrowsing https://doh.cleanbrowsing.org/doh/family-filter/,13.51,13.82,15.01,0.95
+blahdns.com_Germany: https://doh-de.blahdns.com/dns-query,11.05,11.27,13.37,0.96
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3

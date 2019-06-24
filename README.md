@@ -1,10 +1,13 @@
 # MASTI
 Measuring and Simulating the Internet 
 
+<<<<<<< HEAD
 # DNSSec
 To run DNSSec you have do go to DNSSEC folder and run it by `bash dnssec.sh`. To clear the results you can remove all generated results with `bash clean.sh`
 
 
+=======
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
 # Statistics
 Our domain list is from https://www.dns-oarc.net/tools/dnsperf, that contains 10,000,000 registerred domains, from different nations.
 Our initial step was to filter out 5 interesting top level domains

@@ -31,7 +31,11 @@ do
         ## this puts all the searched domains from the inputted domain list
         tld=$(sed "${j}q;d" ../tld.txt)
         while read line; do 
+<<<<<<< HEAD
             dig @$resolver $line +dnssec +multi  | pcregrep -M "flags:(.*)ad(.|\n)*Query time:.*" | grep time | grep -Eo '[0-9]{1,}' >> Results/resultdot$tld.txt
+=======
+            dig @$resolver $line +dnssec +multi  | pcregrep -M "flags:(.*)ad(.|\n)*Query time:.*" | grep "Query time" | grep -Eo '[0-9]{1,}' >> Results/resultdot$tld.txt
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
         done < "../LiveDomains/dot$tld.txt"
     done
     echo -e "\n" >> Results/resultdot$tld.txt
@@ -43,3 +47,13 @@ do
 tld=$(sed "${i}q;d" ../tld.txt)
 echo -e "Resolver:" >> Results/resultdot$tld.txt
 done
+<<<<<<< HEAD
+=======
+
+#!/bin/bash
+url='https://discordapp.com/api/webhooks/535984301984972860/1VDCaTXcuN4e1LNmy7Km4M68ipbnxcqGGSXhQSsgkyprhwCBpgoPdn1rExwoXM3nlLss'
+sleep 5
+message="Your shit is done, dnssec hun go check on it."
+msg_content=\"$message\"
+curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_content}" $url
+>>>>>>> 748abda2665e624d41c8041d7a3835816f5146f3
